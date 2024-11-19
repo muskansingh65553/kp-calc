@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FEF9F2;
+    --foreground: black;
+    --card: white;
+    --card-foreground: black;
+    --popover: white;
+    --popover-foreground: black;
+    --primary: #3B1E54;
+    --primary-foreground: white;
+    --secondary: white;
+    --secondary-foreground: black;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+    --accent: #f4f4f5;
+    --accent-foreground: black;
+    --destructive: #ef4444;
+    --destructive-foreground: white;
+    --border: #e4e4e7;
+    --input: #e4e4e7;
+    --ring: #3B1E54;
+  }
+
+  .dark {
+    --background: #020817;
+    --foreground: white;
+    --card: #020817;
+    --card-foreground: white;
+    --popover: #020817;
+    --popover-foreground: white;
+    --primary: #3B1E54;
+    --primary-foreground: white;
+    --secondary: #111827;
+    --secondary-foreground: white;
+    --muted: #111827;
+    --muted-foreground: #9ca3af;
+    --accent: #111827;
+    --accent-foreground: white;
+    --destructive: #ef4444;
+    --destructive-foreground: white;
+    --border: #1f2937;
+    --input: #1f2937;
+    --ring: #3B1E54;
+  }
+
+  /* Button Styling */
+  .btn-primary {
+    background-color: #3B1E54 !important;
+    color: white !important;
+  }
+
+  .btn-primary:hover {
+    background-color: #2a1640 !important;
+    color: white !important;
+  }
+
+  .glass {
+    background: rgba(254, 249, 242, 0.8) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(120, 157, 188, 0.2) !important;
+    box-shadow: 0 4px 6px -1px rgba(120, 157, 188, 0.1), 0 2px 4px -1px rgba(120, 157, 188, 0.06);
+  }
+
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(172, 84, 84, 0.1) !important;
+  }
+
+  /* Dropdown Styling with !important to override global styles */
+  [data-radix-popper-content] {
+    background-color: rgb(0, 0, 0) !important;
+  }
+
+  .select-trigger,
+  .select-content,
+  [data-radix-select-trigger],
+  [data-radix-select-content] {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .select-item,
+  [data-radix-select-item] {
+    color: black !important;
+    background-color: white !important;
+  }
+
+  .select-item:hover,
+  [data-radix-select-item][data-highlighted] {
+    background-color: #FFE3E3 !important;
+    color: black !important;
+  }
+
+  /* Specific Dropdown Styling for Fraction Selector */
+  [data-radix-popper-content] {
+    background-color: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+  }
+
+  .fraction-selector-trigger,
+  [data-radix-select-trigger] {
+    background-color: rgb(255, 255, 255) !important;
+    color: black !important;
+    opacity: 1 !important;
+  }
+
+  .fraction-selector-content,
+  [data-radix-select-content] {
+    background-color: rgb(255, 255, 255) !important;
+    color: black !important;
+    opacity: 1 !important;
+  }
+
+  .fraction-selector-item,
+  [data-radix-select-item] {
+    color: black !important;
+    background-color: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+  }
+
+  .fraction-selector-item:hover,
+  [data-radix-select-item][data-highlighted] {
+    background-color: #FFE3E3 !important;
+    color: black !important;
+    opacity: 1 !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(120, 157, 188, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 157, 188, 0.3);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 157, 188, 0.5);
+}
+
+h1, h2, h3, h4, h5, .heading {
+  color: #3B1E54;
+}
+
+p, span, div, label, input, textarea {
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}
+
+input:hover, textarea:hover {
+  background-color: #FFE3E3;
+  color: black;
+}
+
+a:hover {
+  background-color: #FFE3E3;
+  color: black;
+}
